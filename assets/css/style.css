@@ -1,10 +1,3 @@
-/**
-* Template Name: iPortfolio - v1.2.0
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -95,16 +88,16 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Hero Section
+# Home Section
 --------------------------------------------------------------*/
-#hero {
+#home {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url("../img/home-bg.png");
   background-size: cover;
 }
 
-#hero:before {
+#home:before {
   content: "";
   background: rgba(5, 13, 24, 0.3);
   position: absolute;
@@ -114,13 +107,13 @@ h6 {
   z-index: 1;
 }
 
-#hero .hero-container {
+#home .home-container {
   position: relative;
   z-index: 2;
   min-width: 300px;
 }
 
-#hero h1 {
+#home h1 {
   margin: 0 250px 0 0;
   font-size: 64px;
   font-weight: 700;
@@ -128,14 +121,71 @@ h6 {
   color: #fff;
 }
 
-#hero p {
+#home p {
   color: #fff;
   margin-bottom: 50px;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
 }
+#home .typed {
+  animation: text-flicker 3s linear infinite;
+}
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
 
-#hero p span {
+  2% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  8% {
+    opacity: 0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  9% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  12% {
+    opacity: 0.1;
+    text-shadow: 0px 0px rgba(242, 22, 22, 1);
+  }
+  20% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  25% {
+    opacity: 0.3;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  30% {
+    opacity: 1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  70% {
+    opacity: 0.7;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  72% {
+    opacity: 0.2;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  77% {
+    opacity: 0.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  100% {
+    opacity: 0.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+}
+
+#home p span {
   color: #fff;
   padding-bottom: 4px;
   letter-spacing: 1px;
@@ -143,20 +193,30 @@ h6 {
 }
 
 @media (min-width: 1024px) {
-  #hero {
+  #home {
     background-attachment: fixed;
+  }
+  #particles-js {
+    position: absolute;
+    width: 50%;
+    height: 50%;
   }
 }
 
 @media (max-width: 768px) {
-  #hero h1 {
+  #home h1 {
     font-size: 28px;
     line-height: 36px;
   }
-  #hero h2 {
+  #home h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
+  }
+  #particles-js {
+    position: absolute;
+    width: 50%;
+    height: 50%;
   }
 }
 
@@ -203,6 +263,9 @@ section {
 /*--------------------------------------------------------------
 # Navbar
 --------------------------------------------------------------*/
+.navbar {
+  background-color: black;
+}
 .navbar-brand img {
   margin-top: -10px;
   height: 50px;
@@ -259,15 +322,6 @@ section {
   float: left;
 }
 
-.skills .count-box span {
-  font-size: 48px;
-  line-height: 40px;
-  display: block;
-  font-weight: 700;
-  color: #050d18;
-  margin-left: 60px;
-}
-
 .skills .count-box p {
   padding: 15px 0 0 0;
   margin: 0 0 0 60px;
@@ -292,6 +346,7 @@ section {
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
+
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
@@ -350,14 +405,20 @@ section {
   border: 2px solid #1f5297;
 }
 
+@media (max-width: 768px) {
+  .resume {
+    padding-left: 10px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio {
   width: 100%;
   height: 100vh;
-  background: url("../img/portfolio/rain.png") top center;
-  background-size: contain;
+  background: url("../img/portfolio/rain.png") center;
+  background-size: cover;
   background-attachment: fixed;
 }
 
@@ -368,11 +429,12 @@ section {
 # Contact
 --------------------------------------------------------------*/
 .contact {
-  padding-bottom: 130px;
+  padding-bottom: 120px;
 }
 
 .contact .info {
-  padding: 30px;
+  padding-left: 10px;
+  padding-top: 20px;
   background: #fff;
   width: 100%;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
@@ -442,91 +504,6 @@ section {
   color: #fff;
 }
 
-.contact .php-email-form {
-  width: 100%;
-  padding: 30px;
-  background: #fff;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-}
-
-.contact .php-email-form .form-group {
-  padding-bottom: 8px;
-}
-
-.contact .php-email-form .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.contact .php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.contact .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
-}
-
-.contact .php-email-form input,
-.contact .php-email-form textarea {
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-}
-
-.contact .php-email-form input {
-  height: 44px;
-}
-
-.contact .php-email-form textarea {
-  padding: 10px 12px;
-}
-
-.contact .php-email-form button[type="submit"] {
-  background: #149ddd;
-  border: 0;
-  padding: 10px 24px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.contact .php-email-form button[type="submit"]:hover {
-  background: #37b3ed;
-}
-
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);
@@ -543,4 +520,37 @@ section {
   100% {
     transform: rotate(360deg);
   }
+}
+/* Footer */
+
+#footer {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #333333 !important;
+}
+#footer a {
+  color: #ffffff;
+  text-decoration: none !important;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li {
+  padding: 3px 0;
+}
+#footer ul.social li a i {
+  margin-right: 5px;
+  font-size: 25px;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+#footer ul.social li:hover a i {
+  font-size: 30px;
+  margin-top: -10px;
+}
+#footer ul.social li a {
+  color: #ffffff;
+}
+#footer ul.social li a:hover {
+  color: #eeeeee;
 }

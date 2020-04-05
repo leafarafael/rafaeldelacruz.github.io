@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Rafael Dela Cruz</title>
     <meta charset="utf-8" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -31,33 +33,34 @@
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
+
   </head>
 
   <body>
     <!-- ======= Header ======= -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark"  >
+      <div class="container" data-aos="fade-up">
         <div class="d-flex flex-grow-1">
           <span class="w-0 d-lg-none d-block"
             ><!-- hidden spacer to center brand on mobile --></span
           >
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand">
             <img src="assets/img/logo/logo.png" alt="logo" id="sitelogo" />
           </a>
 
           <div class="w-100 text-right">
-            <button
+            <button 
               class="navbar-toggler"
               type="button"
               data-toggle="collapse"
-              data-target="#myNavbar"
+              data-target="#myNavbar" 
             >
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
         </div>
         <div
-          class="nav-menu collapse navbar-collapse flex-grow-1 text-right"
+          class="nav-menu collapse navbar-collapse flex-grow-1 text-center"
           id="myNavbar"
         >
           <ul class="navbar-nav ml-auto flex-nowrap">
@@ -82,24 +85,25 @@
 
     <!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
+    <!-- ======= home Section ======= -->
 
     <section
-      id="hero"
+      id="home"
       class="d-flex flex-column justify-content-center align-items-center"
     >
-      <div class="hero-container" data-aos="fade-in">
+    <div id="particles-js" ></div>
+      <div class="home-container" data-aos="fade-in">
         <h1>Rafael Dela Cruz</h1>
         <p>
           I'm a
           <span
             class="typed"
-            data-typed-items="Designer, Developer, Instructor"
+            data-typed-items="Developer, Designer, Instructor"
           ></span>
         </p>
       </div>
     </section>
-    <!-- End Hero -->
+    <!-- End home -->
 
     <main id="main">
       <!-- ======= About Section ======= -->
@@ -330,13 +334,20 @@
 
           <div class="row" data-aos="fade-in">
             <div class="col-lg-5 d-flex align-items-stretch">
+              <iframe
+              src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.668844274939!2d54.40660981483055!3d24.496928384226685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e67bc00000001%3A0x16c65b2cae29e3fa!2sMangrove%20Place!5e0!3m2!1shi!2sae!4v1585832022367!5m2!1shi!2sae"
+              frameborder="0"
+              style="border:0; width: 100%; height: 290px;"
+              allowfullscreen
+            ></iframe>
+            </div>
+            <div class="col-lg-5 d-flex align-items-stretch">
               <div class="info">
                 <div class="address">
                   <i class="icofont-google-map"></i>
                   <h4>Location:</h4>
                   <p>Al Reem Island, Abu Dhabi, UAE</p>
                 </div>
-
                 <div class="email">
                   <i class="icofont-envelope"></i>
                   <h4>Email:</h4>
@@ -346,100 +357,40 @@
                 <div class="phone">
                   <i class="icofont-phone"></i>
                   <h4>Call:</h4>
-                  <p>+971582281960</p>
+                  <p></p>
                 </div>
-
-                <iframe
-                  src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.668844274939!2d54.40660981483055!3d24.496928384226685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e67bc00000001%3A0x16c65b2cae29e3fa!2sMangrove%20Place!5e0!3m2!1shi!2sae!4v1585832022367!5m2!1shi!2sae"
-                  frameborder="0"
-                  style="border:0; width: 100%; height: 290px;"
-                  allowfullscreen
-                ></iframe>
               </div>
             </div>
 
-            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-              <form
-                action="forms/contact.php"
-                method="post"
-                role="form"
-                class="php-email-form"
-              >
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="name">Your Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      class="form-control"
-                      id="name"
-                      data-rule="minlen:4"
-                      data-msg="Please enter at least 4 chars"
-                    />
-                    <div class="validate"></div>
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="name">Your Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      id="email"
-                      data-rule="email"
-                      data-msg="Please enter a valid email"
-                    />
-                    <div class="validate"></div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="name">Subject</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="subject"
-                    id="subject"
-                    data-rule="minlen:4"
-                    data-msg="Please enter at least 8 chars of subject"
-                  />
-                  <div class="validate"></div>
-                </div>
-                <div class="form-group">
-                  <label for="name">Message</label>
-                  <textarea
-                    class="form-control"
-                    name="message"
-                    rows="10"
-                    data-rule="required"
-                    data-msg="Please write something for us"
-                  ></textarea>
-                  <div class="validate"></div>
-                </div>
-                <div class="mb-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">
-                    Your message has been sent. Thank you!
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="submit">Send Message</button>
-                </div>
-              </form>
-            </div>
+            
           </div>
         </div>
       </section>
       <!-- End Contact Section -->
     </main>
     <!-- End #main -->
-
+   
+<!--footer starts from here-->
+<section id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2">
+        <ul class="list-unstyled list-inline social text-center">
+          <li class="list-inline-item"><a href="https://www.facebook.com/rafaeldelacruz1992" target="_blank"><i class="fab fa-facebook"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.instagram.com/rafaelpdelacruz/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.linkedin.com/in/rafael-dela-cruz-ab1175b6/" target="_blank" ><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+  
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
     <script src="assets/vendor/counterup/counterup.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
@@ -450,5 +401,21 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+ <!-- Particle scripts -->
+ <script src="particles.js"></script>
+ 
+ <script src="app.js"></script>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.13.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.13.2/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
   </body>
 </html>
