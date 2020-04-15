@@ -1,7 +1,9 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-
+* {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -24,7 +26,13 @@ h5,
 h6 {
   font-family: "Raleway", sans-serif;
 }
-
+section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 150px 100px 100px;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -55,38 +63,122 @@ h6 {
   transition: background 0.2s ease-in-out;
 }
 
-/* Mobile Navigation */
-.mobile-nav-toggle {
+/**/
+
+header {
   position: fixed;
-  right: 15px;
-  top: 15px;
-  z-index: 9998;
-  border: 0;
-  background: none;
-  font-size: 24px;
-  transition: all 0.4s;
-  outline: none !important;
-  line-height: 1;
-  cursor: pointer;
-  text-align: right;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #000000;
+  z-index: 1000;
+
+  transition: opacity 0.5s;
+  opacity: 1;
 }
 
-.mobile-nav-toggle i {
-  color: #149ddd;
+header.hide {
+  opacity: 0;
 }
 
-.mobile-nav-active {
-  overflow: hidden;
+header .logo {
+  height: 50px;
 }
-
-.mobile-nav-active #header {
-  left: 0;
+header ul {
+  position: relative;
+  display: flex;
 }
-
-.mobile-nav-active .mobile-nav-toggle i {
+header ul li {
+  list-style: none;
+}
+header ul li a {
+  padding: 5px 20px;
   color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.toggle {
+  display: none;
 }
 
+@media (max-width: 850px) {
+  section {
+    padding: 100px 50px 50px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  header {
+    padding: 0 30px;
+    justify-content: space-between;
+  }
+  header ul {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 50px 100px;
+    text-align: center;
+    overflow: auto;
+    transition: 0.5s;
+    background: #000;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  header.active ul {
+    opacity: 1;
+    top: 80px;
+    transform: translateY(0);
+  }
+
+  header ul li a {
+    margin: 15 px 0;
+    font-size: 24px;
+  }
+  .toggle {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  .toggle::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    z-index: 1;
+    box-shadow: 0 10px 0 #fff;
+    transition: 0.5s;
+  }
+  .toggle::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    z-index: 1;
+    transition: 0.5s;
+  }
+  header.active .toggle::before {
+    top: 14px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+  }
+  header.active .toggle::after {
+    bottom: 14px;
+    transform: rotate(-45deg);
+  }
+}
 /*--------------------------------------------------------------
 # Home Section
 --------------------------------------------------------------*/
@@ -192,7 +284,7 @@ h6 {
   border-bottom: 3px solid #149ddd;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1080px) {
   #home {
     background-attachment: fixed;
   }
@@ -203,20 +295,30 @@ h6 {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   #home h1 {
-    font-size: 28px;
+    font-size: 26px;
     line-height: 36px;
   }
-  #home h2 {
-    font-size: 18px;
+  #home p {
+    font-size: 16px;
     line-height: 24px;
     margin-bottom: 30px;
   }
+
+  #home h1,
+  p {
+    padding: 0 30px;
+  }
+
   #particles-js {
     position: absolute;
     width: 50%;
     height: 50%;
+  }
+
+  .about img {
+    align-items: center;
   }
 }
 
@@ -277,7 +379,9 @@ section {
 
 /*--------------------------------------------------------------
 # About
+
 --------------------------------------------------------------*/
+
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -306,9 +410,6 @@ section {
 /*--------------------------------------------------------------
 # Skills
 --------------------------------------------------------------*/
-.skills {
-  padding-bottom: 30px;
-}
 
 .skills .count-box {
   padding: 30px;
@@ -344,10 +445,10 @@ section {
   color: #1f5297;
 }
 /*--------------------------------------------------------------
-# Resume
+# career
 --------------------------------------------------------------*/
 
-.resume .resume-title {
+.career .career-title {
   font-size: 26px;
   font-weight: 700;
   margin-top: 20px;
@@ -355,14 +456,14 @@ section {
   color: #050d18;
 }
 
-.resume .resume-item {
+.career .career-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
   border-left: 2px solid #1f5297;
   position: relative;
 }
 
-.resume .resume-item h4 {
+.career .career-item h4 {
   line-height: 18px;
   font-size: 18px;
   font-weight: 600;
@@ -372,28 +473,19 @@ section {
   margin-bottom: 10px;
 }
 
-.resume .resume-item h5 {
-  font-size: 16px;
-  background: #e4edf9;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.resume .resume-item ul {
+.career .career-item ul {
   padding-left: 20px;
 }
 
-.resume .resume-item ul li {
+.career .career-item ul li {
   padding-bottom: 10px;
 }
 
-.resume .resume-item:last-child {
+.career .career-item:last-child {
   padding-bottom: 0;
 }
 
-.resume .resume-item::before {
+.career .career-item::before {
   content: "";
   position: absolute;
   width: 16px;
@@ -404,10 +496,56 @@ section {
   background: #fff;
   border: 2px solid #1f5297;
 }
+.career .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.collapsible {
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  text-align: left;
+  font-size: 2em;
+}
+.collapsible .year {
+  margin-right: 30px;
+}
+.career .active,
+.collapsible:hover {
+  background-color: #555;
+}
+.active .title,
+.active .year {
+  color: white;
+}
+
+.collapsible:after {
+  content: "\002B";
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-right: -120px;
+}
+
+.career .active:after {
+  content: "\2212";
+}
+
+@media (min-width: 1080px) {
+  #career .collapsible .title,
+  .year {
+    font-size: 20px;
+  }
+}
 
 @media (max-width: 768px) {
-  .resume {
-    padding-left: 10px;
+  .career {
+    padding-left: 4px;
+  }
+  #career .collapsible .title,
+  .year {
+    font-size: 14px;
   }
 }
 
@@ -415,11 +553,13 @@ section {
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio {
-  width: 100%;
   height: 100vh;
-  background: url("../img/portfolio/rain.png") center;
+  background-image: url("../img/portfolio/rain.png");
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 .portfolio h2 {
@@ -504,53 +644,24 @@ section {
   color: #fff;
 }
 
-@-webkit-keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 /* Footer */
-
-#footer {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background: #333333 !important;
+.footer {
+  color: white;
 }
-#footer a {
-  color: #ffffff;
-  text-decoration: none !important;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-#footer ul.social li {
-  padding: 3px 0;
-}
-#footer ul.social li a i {
-  margin-right: 5px;
+.footer ul.social li a i {
   font-size: 25px;
   -webkit-transition: 0.5s all ease;
   -moz-transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
-#footer ul.social li:hover a i {
+.footer ul.social li:hover a i {
   font-size: 30px;
   margin-top: -10px;
 }
-#footer ul.social li a {
-  color: #ffffff;
-}
-#footer ul.social li a:hover {
+.footer ul.social li a:hover {
   color: #eeeeee;
+}
+
+.footer-copyright {
+  color: rgb(75, 66, 66);
 }
